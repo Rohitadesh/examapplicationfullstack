@@ -1,0 +1,14 @@
+*{
+  padding:0;
+  margin:0;
+}
+/* .header-container{
+  height: 50%;
+
+} */
+.text{
+  font-family: 'Poppins', sans-serif;
+}
+.contain{
+  background-image: linear-gradient(to right bottom, #ffffff, #eff2ff, #d6e8ff, #b4e1ff, #88daff, #73dafe, #5adbfc, #3adbf8, #52e2f5, #68e8f2, #7ceeef, #8ff4ed);
+}
