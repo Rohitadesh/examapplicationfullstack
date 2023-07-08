@@ -1,6 +1,6 @@
 import './App.css';
 //import LoginPage  from './login';
-import  Quizcustompage  from './quicklogin';
+import  Quizcustompage  from './quizcustom';
 import LoginPage  from './login';
 import ExamPage from './exam';
 import {
