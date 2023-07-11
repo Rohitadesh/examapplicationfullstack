@@ -1,5 +1,6 @@
 const express= require('express')
 const app=express();
+const mysql=require('mysql')
 const port = process.env.PORT || 5000;
 const fs= require('fs');
 const cors = require("cors");
@@ -8,13 +9,11 @@ const cors = require("cors");
 // })
 app.use(cors())
 app.post('/',(req,res)=>{
-    let file=req.body.file
-    console.log(file);  
-    fs.readFile(file,"utf-8",(error,data)=>{
-        // console.log(error)
-        if (error) throw err
-        console.log(data)
-    })
+    async function database(){
+        const pool=  await mysql.createPool({host:'localhost', user: 'root', database: 'questionbank'}) 
+    const 
+    }
+    
     
 })
 app.set('port', (5000));

@@ -11,7 +11,7 @@ c.Both A & B
 d.None of the above
 
 Q3.How do we put Javascript inside HTML?
-a.<js>
+a.<js>export default Quizcustompage
 b.<javascript>
 c.<scripting>
 d.<script>

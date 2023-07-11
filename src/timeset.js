@@ -8,7 +8,7 @@ const TimeSetting = ({timeinput}) =>{
             { timing.map(element => (
                 <option key={element.id}>{element.r}</option>
             ))}        
-        </>
+            hour: hour:</>
     )
 
 }
