@@ -1,19 +1,35 @@
-import TimeSetting from "./timeset"
+import TimeSetting from "./timeset" 
 import { api_post } from "./api"
-import { useState } from "react";
+import { split } from "postcss/lib/list";
+// import { useState } from "react";
 
+// const setData=createContext
 const Quizcustompage = () =>{
-    // const [file_data,setfile]=useState()
+    // const [file_data,setfile]=useState('')
+    // const setData=useContext('')
+    
     function handlefile(files){
         let file_reader=new FileReader();
         file_reader.onload = async ()=>{
-            console.log(file_reader.result)
-            // let contents = file_reader.result;
-            // setfile(contents)
+            let contents = file_reader.result;
+            data_get(contents)
         }
         file_reader.readAsText(files)
-        
     }
+    function data_get(data){
+        // let question_bank;
+        let split_data=data.split('\n')
+        // split_data.map((element)=>({elment}))
+        console.log(split_data)
+        split_data.map((element)=>{
+            {element[0]=element[1]}
+        }) 
+        console.log()
+
+    }
+
+
+
 
     return (
         <div className="h-screen w-screen bg-sky-100">
