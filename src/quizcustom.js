@@ -1,6 +1,6 @@
 import TimeSetting from "./timeset" 
 import { api_post } from "./api"
-import { split } from "postcss/lib/list";
+// import { split } from "postcss/lib/list";
 // import { useState } from "react";
 
 // const setData=createContext
@@ -18,14 +18,13 @@ const Quizcustompage = () =>{
     }
     function data_get(data){
         // let question_bank;
+        let arr=[]
+        let Quiz;
         let split_data=data.split('\n')
-        // split_data.map((element)=>({elment}))
-        console.log(split_data)
-        split_data.map((element)=>{
-            {element[0]=element[1]}
-        }) 
-        console.log()
-
+        split_data.map(i =>
+        i[0]==='Q' ? (Quiz = { [i.slice(0,2)]:i.slice(3),option:{} },arr.push(Quiz) )
+        : Quiz.option[i.slice(0,1)]=i.slice(2))
+        console.log(arr)
     }
 
 
