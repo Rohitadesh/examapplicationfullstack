@@ -1,20 +1,20 @@
 import TimeSetting from "./timeset" 
 import { api_post } from "./api"
 // import { split } from "postcss/lib/list";
-// import { useState } from "react";
+import { useState } from "react";
 
 // const setData=createContext
 const Quizcustompage = () =>{
-    // const [file_data,setfile]=useState('')
-    // const setData=useContext('')
-    
+    const [data,Setdata]=useState()
     function handlefile(files){
+        // console.log(files)
         let file_reader=new FileReader();
-        file_reader.onload = async ()=>{
-            let contents = file_reader.result;
+        file_reader.readAsText(files)
+        file_reader.onload= async ()=>{
+            let contents = await file_reader.result;
+            // console.log(contents)
             data_get(contents)
         }
-        file_reader.readAsText(files)
     }
     function data_get(data){
         // let question_bank;
@@ -24,7 +24,12 @@ const Quizcustompage = () =>{
         split_data.map(i =>
         i[0]==='Q' ? (Quiz = { [i.slice(0,2)]:i.slice(3),option:{} },arr.push(Quiz) )
         : Quiz.option[i.slice(0,1)]=i.slice(2))
-        console.log(arr)
+        // console.log(arr)
+        api_post(arr)
+        // let p=Setdata(arr)
+        // console.log(p)
+        
+        
     }
 
 
@@ -52,8 +57,8 @@ const Quizcustompage = () =>{
                 </div>
                     <div className="h-[70%] flex-wrap flex flex-row justify-center items-center">
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" >Upload file</label>    
-                        <input id="file_input" accept="txt" type="file" name="file" onChange={e=>handlefile(e.target.files[0])} className="block bg-sky-100 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" />
-                        <button type="submit" onClick={()=>api_post()} className="bg-blue-200 hover:bg-blue-100 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center rounded-lg">SUBMIT</button>
+                        <input id="file_input" accept="txt" type="file" name="file" onChange={e=>Setdata(e.target.files[0])} className="block bg-sky-100 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" />
+                        <button type="submit" onClick={()=>handlefile(data)} className="bg-blue-200 hover:bg-blue-100 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center rounded-lg">SUBMIT</button>
                     </div>
                 </form> 
                
