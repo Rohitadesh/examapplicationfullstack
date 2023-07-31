@@ -26,7 +26,7 @@ export const api_get= async(values)=>{
             body:JSON.stringify(values)
         })
         let result=await response.json()
-        console.log(result)
+        // console.log(result)
     }
     catch(error){
         console.log(error)
