@@ -22,19 +22,20 @@ const Quizcustompage = () =>{
         let arr=[]
         let Quiz;
         let split_data=data.split('\n')
+        // console.log(split_data)
         split_data.map(i =>
-        i[0]==='Q' ? (Quiz = { question:i.slice(3),option:{} },arr.push(Quiz) )
-        : Quiz.option[i.slice(0,1)]=i.slice(2))
+        i[0]==='Q'? (Quiz = { question:i.slice(0),option:{},answer:''},arr.push(Quiz) ):i.slice(0,3)==='ans'?(Quiz.answer=i.slice(7))
+        : Quiz.option[i.slice(0,1)]=i.slice(0))
         // let result=JSON.stringify(arr)
-        // console.log(result)
+        console.log(arr)
         Setdata(arr)
         // console.log(data)
     }
 
     return (
         <div className="h-screen w-screen bg-sky-100">
-            <header className=" h-1/3 w-full bg-[url('../public/img/exam.png')] bg-contain bg-no-repeat bg-center">
-            </header>
+        <header className=" h-1/3 w-full bg-[url('../public/img/exam.png')] bg-contain bg-no-repeat bg-center">
+        </header>
             <main className="h-2/3 scroll">
               <form action="/"  method="post">
                 <div className="h-[30%] flex flex-wrap flex-row justify-center items-center">
