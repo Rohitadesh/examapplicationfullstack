@@ -1,4 +1,4 @@
-let url="http://localhost:5000/"
+let url="http://localhost:5000/exam"
 export const api_post= async (values) =>{
     try{
         let response= await fetch(url,{
@@ -26,7 +26,7 @@ export const api_get= async(values)=>{
             body:JSON.stringify(values)
         })
         let result=await response.json()
-        // console.log(result)
+        console.log(result)
     }
     catch(error){
         console.log(error)

@@ -21,7 +21,7 @@ const ExamPage = ()=>{
      
 
     return (
-       <div className="login-container h-screen w-screen  border-solid border-black">
+       <div className="login-container h-screen w-screen bg-sky-100  border-solid border-black">
         <head className="h-[15%]  w-full flex flex-wrap flex-col justify-center items-center bg-[url('../public/img/exam.png')]  bg-no-repeat bg-contain bg-center"></head>
         
                 <main className="h-[85%]  flex flex-wrap  flex-col justify-center items-center ">
