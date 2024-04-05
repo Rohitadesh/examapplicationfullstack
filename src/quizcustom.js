@@ -27,7 +27,7 @@ const Quizcustompage = () =>{
         i[0]==='Q'? (Quiz = { question:i.slice(0),option:{},answer:''},arr.push(Quiz) ):i.slice(0,3)==='ans'?(Quiz.answer=i.slice(7))
         : Quiz.option[i.slice(0,1)]=i.slice(0))
         // let result=JSON.stringify(arr)
-        console.log(arr)
+        // console.log(arr)
         Setdata(arr)
         // console.log(data)
     }

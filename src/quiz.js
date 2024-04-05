@@ -5,9 +5,9 @@ import {api_post} from "./api"
 const Quiz = ({new_data}) =>{
     const [select,setselect]=useState({})
     const [show,setShow]=useState(0)
-    // setfreshdata(new_data)
-    console.log(select)
-
+    // setfreshdata(new_  data)
+    // console.log(new_data);
+    
     return(
             <div className="exam-container rounded-md shadow-2xl h-[85%] w-1/2 ">
                 
